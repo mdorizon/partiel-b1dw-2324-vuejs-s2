@@ -18,11 +18,11 @@
 </script>
 
 <template>
-    <div class="card" v-for="session in activity.sessions">
+    <div class="card" v-for="(session, i) in activity.sessions">
         <h2>{{ session.date }} || {{ session.start_at }} - {{ session.end_at }}</h2>
         <p>{{ session.option }}</p>
         <p>places prises : {{ session.registered }} / places restantes : {{ session.available_places }}</p>
-        <RouterLink class="btn btn-primary" :to="{ name: 'step3', params: { id: i }}">Choisir</RouterLink>
+        <RouterLink class="btn btn-primary" :to="{ name: 'step3', params: { id: props.id, session: i }}">Choisir</RouterLink>
     </div>
 
     <div class="d-flex justify-content-center">
