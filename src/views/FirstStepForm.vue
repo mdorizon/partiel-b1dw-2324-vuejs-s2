@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue'
+import ProgressionStep from '../components/ProgressionStep.vue';
     const emit = defineEmits(['submitFirstForm']);
     
     // les infos envoyé dans app vue si tout les tests sont passés
@@ -42,7 +43,7 @@
 
 <template>
         <h2>Informations personnelles</h2>
-        <form class="col-8 mt-5 mb-5" @submit.prevent="handleSubmit">
+        <form class="mt-5 mb-5" @submit.prevent="handleSubmit">
             <div class="mb-3 gap-3">
                 <!-- first name -->
                 <div v-if="infosError.firstName" class="text-danger">{{ infosError.firstName }}</div>
@@ -64,4 +65,7 @@
                 <button type="submit" class="btn btn-primary w-100">Submit</button>
             </div>
         </form>
+        <div class="d-flex justify-content-center">
+            <ProgressionStep :currentStep="currentStep" />
+        </div>
 </template>
