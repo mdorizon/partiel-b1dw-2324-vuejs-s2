@@ -1,6 +1,6 @@
 <script setup>
     import { ref } from 'vue'
-import ProgressionStep from '../components/ProgressionStep.vue';
+    import ProgressionStep from '../components/ProgressionStep.vue';
     const emit = defineEmits(['submitFirstForm']);
     
     // les infos envoyé dans app vue si tout les tests sont passés
@@ -66,6 +66,6 @@ import ProgressionStep from '../components/ProgressionStep.vue';
             </div>
         </form>
         <div class="d-flex justify-content-center">
-            <ProgressionStep :currentStep="currentStep" />
+            <ProgressionStep currentStep=1 />
         </div>
 </template>
